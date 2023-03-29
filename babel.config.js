@@ -1,3 +1,5 @@
+const isDEV = process.env.NODE_ENV === "development"; // 是否是开发模式
+
 module.exports = {
   // 预设执行顺序由右往左,所以先处理ts,再处理jsx
   presets: [
@@ -18,4 +20,8 @@ module.exports = {
     ["@babel/preset-react", { runtime: "automatic" }],
     "@babel/preset-typescript",
   ],
+  // 由于目前js的标准语法不自持class react 装饰器的语法 所以打包会报错 配合tsconfig experimentalDecorators属性和plugin-proposal-decorators使用
+  plugins: [
+    ["@babel/plugin-proposal-decorators", { legacy: true }],
+  ].filter(Boolean), // 过滤空值
 };

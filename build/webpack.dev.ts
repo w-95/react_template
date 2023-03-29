@@ -10,6 +10,7 @@ import WebpackDevServer, {
   Configuration as WebpackDevServerConfiguration,
 } from "webpack-dev-server";
 import baseConfig from "./webpack.base";
+import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 
 // 运行命令的时候重启一次打开一个tab 页很烦，所以呢优化一下
 // 参考：create-react-app 的启动方式
@@ -33,6 +34,12 @@ const devConfig: Configuration = merge(baseConfig, {
    * 能找到源代码的错误，而不是打包后的，所以需要加上 module
    */
   devtool: "eval-cheap-module-source-map",
+  plugins: [
+    // 热更新的作用 实时更新的同时会保留组件的状态
+    // 添加热更新 pnpm add @pmmmwh/react-refresh-webpack-plugin react-refresh -D
+    // 同时需要修改babel.config的plugins
+    new ReactRefreshWebpackPlugin(),
+  ],
 });
 
 const devServer = new WebpackDevServer(

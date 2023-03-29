@@ -14,7 +14,7 @@
     "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     // "lib": [],                                        /* Specify a set of bundled library declaration files that describe the target runtime environment. */
     "jsx": "react-jsx",                                  /* 这里改成react-jsx，就不需要在tsx文件中手动引入React了 */
-    // "experimentalDecorators": true,                   /* Enable experimental support for legacy experimental decorators. */
+    "experimentalDecorators": true,                      /* 对于class类的react 支持装饰器 因为目前js标准语法不支持装饰器 配合 pnpm add @babel/plugin-proposal-decorators -D 使用 */
     // "emitDecoratorMetadata": true,                    /* Emit design-type metadata for decorated declarations in source files. */
     // "jsxFactory": "",                                 /* Specify the JSX factory function used when targeting React JSX emit, e.g. 'React.createElement' or 'h'. */
     // "jsxFragmentFactory": "",                         /* Specify the JSX Fragment reference used for fragments when targeting React JSX emit e.g. 'React.Fragment' or 'Fragment'. */
@@ -41,7 +41,7 @@
     // "resolvePackageJsonExports": true,                /* Use the package.json 'exports' field when resolving package imports. */
     // "resolvePackageJsonImports": true,                /* Use the package.json 'imports' field when resolving imports. */
     // "customConditions": [],                           /* Conditions to set in addition to the resolver-specific defaults when resolving imports. */
-    // "resolveJsonModule": true,                        /* Enable importing .json files. */
+    "resolveJsonModule": true,                           /* 否则ts会导出异常 */
     // "allowArbitraryExtensions": true,                 /* Enable importing files with any extension, provided a declaration file is present. */
     // "noResolve": true,                                /* Disallow 'import's, 'require's or '<reference>'s from expanding the number of files TypeScript should add to a project. */
 
