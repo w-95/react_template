@@ -1,10 +1,14 @@
 import { createRoot } from "react-dom/client";
 
 import App from './App';
+import "./app.less";
+import appStyle from "./app.scss";
 
 const root = document.querySelector('#root');
 
+
 if(root) {
+    root.className = appStyle["app-root"];
     createRoot(root).render(<App />)
 };
 

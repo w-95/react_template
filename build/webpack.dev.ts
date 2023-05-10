@@ -46,7 +46,7 @@ const devServer = new WebpackDevServer(
   {
     host: HOST,
     port: PORT,
-    open: false,
+    open: true,
     compress: false, // gzip压缩,开发环境不开启，提升热更新速度
     hot: true, // 开启热更新
     historyApiFallback: true, // 解决history路由404问题
