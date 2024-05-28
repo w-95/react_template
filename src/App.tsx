@@ -4,10 +4,12 @@ import type { SizeType } from "antd/es/config-provider/SizeContext";
 import { Layout, ConfigProvider, theme } from "antd";
 import appStyle from "./app.scss";
 import LeftSider from "@/components/leftSider/index";
+import  { usePlayerSelection } from "foxglove-studio/packages/studio-base/src/context/PlayerSelectionContext"
 
 const { Header, Content, Footer } = Layout;
 
 const App = () => {
+  const a = usePlayerSelection();
   const colorBgContainer = "red";
   return (
     
